@@ -4,6 +4,7 @@ import 'dart:js';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto/view/adicionar_jogo.dart';
+import 'package:projeto/view/atualizar_jogos.dart';
 import 'package:projeto/view/atualizar_usuario.dart';
 import 'package:projeto/view/categoria_view.dart';
 import 'package:projeto/view/categoria_view2.dart';
@@ -46,6 +47,7 @@ Future<void> main() async {
         't8': (context) => TelaFavoritos(),
         't9': (context) => Sobre(),
         't10':(context) => AtualizarUsuario(),
+        't11':(context) => AtualizarJogos(),
       },
       ),
     ), 

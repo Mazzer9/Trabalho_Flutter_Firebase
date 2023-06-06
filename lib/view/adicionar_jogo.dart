@@ -2,7 +2,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:projeto/controller/jogos_controller.dart';
 import '../model/games.dart';
 
 class AdicionarJogo extends StatefulWidget {
@@ -119,6 +118,7 @@ class _AdicionarJogoState extends State<AdicionarJogo> {
                       'Jogo adicionado com sucesso.',
                       Colors.blueAccent.shade100,
                     );
+                    Navigator.pop(context);
                   } else {
                     mensagem(
                       'Os campos não podem ser vazios.',

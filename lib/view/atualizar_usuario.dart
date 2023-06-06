@@ -27,7 +27,7 @@ class _AtualizarUsuarioState extends State<AtualizarUsuario> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 95, 95, 95),
-        title: Text('Atualizar nome'),
+        title: Text('Atualizar Nome'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:projeto/model/comentarios.dart';
+import 'package:projeto/model/games.dart';
 import 'package:projeto/model/usuario.dart';
 
 import '../view/util.dart';
@@ -101,7 +103,5 @@ class LoginController {
         .collection('usuarios')
         .where('uid', isEqualTo: LoginController().idUsuario());
   }
-
-
 }
 

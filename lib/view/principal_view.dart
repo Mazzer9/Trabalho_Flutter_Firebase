@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto/controller/login_controller.dart';
+import 'package:projeto/model/comentarios.dart';
 import 'package:projeto/repositories/games_repository.dart';
 import 'package:projeto/view/games_detalhes.dart';
 import '../model/games.dart';
@@ -26,6 +27,19 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         tabela.clear();
         for (var doc in snapshot.docs) {
           tabela.add(Games.fromMap(doc.data()));
+        }
+      });
+    });
+
+    FirebaseFirestore.instance
+        .collection("comentarios")
+        .snapshots()
+        .listen((snapshot) {
+      setState(() {
+        var tabelacomentario = ComentariosRepository.tabelacomentario;
+        tabelacomentario.clear();
+        for (var doc in snapshot.docs) {
+          tabelacomentario.add(Comentar.fromMap(doc.data()));
         }
       });
     });
@@ -176,6 +190,21 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
           ),
           ListTile(
             title: Text(
+              'Editar Jogos',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, 't11').then((_) => setState(() {}));
+            },
+          ),
+          Divider(
+            color: Colors.white,
+          ),
+          ListTile(
+            title: Text(
               'Atualizar Nome',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -245,7 +274,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     width: MediaQuery.of(context).size.width * 0.80,
                     height: MediaQuery.of(context).size.height * 0.40,
                     fit: BoxFit.contain,
-                  ),
+                  ),                  
                 ),
               ],
             ),
